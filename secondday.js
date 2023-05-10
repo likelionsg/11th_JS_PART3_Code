@@ -96,7 +96,7 @@ const countriesContainer = document.querySelector(".countries");
 //   }, 1000);
 // }, 1000);
 
-////오늘 완성본
+////첫날 완성본
 // const renderError = function (msg) {
 //   countriesContainer.insertAdjacentText('beforeend', msg);
 //   countriesContainer.style.opacity = 1;
@@ -135,10 +135,36 @@ const countriesContainer = document.querySelector(".countries");
 //       });
 //   };
 
-// getCountryData('germany');
+////Introducing JSON
+// const jsonString = `{
+//     "name": "John Doe",
+//     "age": 30,
+//     "isStudent": false,
+//     "courses": ["math", "history", "chemistry"],
+//     "address": {
+//       "street": "123 Main St",
+//       "city": "Anytown",
+//       "postalCode": "12345"
+//     }
+//   }`;
 
-//WhereAmI using lat, lng
-// whereAmI("portugal");
+// // Parse the JSON string to a JavaScript object
+// const jsonObject = JSON.parse(jsonString);
+
+// // Access values in the JSON object
+// console.log(jsonObject.name); // Output: John Doe
+// console.log(jsonObject["age"]); // Output: 30
+
+// // Access values in the nested JSON object (address)
+// console.log(jsonObject.address.street); // Output: 123 Main St
+// console.log(jsonObject["address"]["city"]); // Output: Anytown
+
+// // Access values in the JSON array (courses)
+// console.log(jsonObject.courses[0]); // Output: math
+// console.log(jsonObject["courses"][1]); // Output: history
+// console.log(jsonObject.courses[2]); // Output: chemistry
+
+//// WhereAmI using lat, lng
 // const whereAmI = function (lat, lng) {
 //   fetch(
 //     `https://geocode.xyz/${lat},${lng}?geoit=json&auth=113481022370462e15969969x113003`
@@ -160,7 +186,7 @@ const countriesContainer = document.querySelector(".countries");
 //     .catch((err) => console.error(`${err.message} 💥`));
 // };
 
-//Getting My position
+// // Getting My position
 // const getPosition = function () {
 //   return new Promise(function (resolve, reject) {
 //     // navigator.geolocation.getCurrentPosition(
@@ -170,8 +196,9 @@ const countriesContainer = document.querySelector(".countries");
 //     navigator.geolocation.getCurrentPosition(resolve, reject);
 //   });
 // };
+// getPosition().then((res) => console.log(res));
 
-//Build WhereAmI using my position
+////Build WhereAmI using my position
 // const whereAmI = function (lat, lng) {
 //   getPosition()
 //     .then((pos) => {
